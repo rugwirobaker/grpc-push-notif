@@ -3,4 +3,12 @@ There are primarily 4 types of gRPC apis, req/resp, req/streaming-resp, streamin
 
 The implementation here emulates a very simple, rudimentary smart thermostate which connects to its server, subscribes to a bunch notifications and listens to them. The screenshot below provides the overview, fairly simple.
 
+## How do you run this 
+ 1. run `make run dependecies` to install dependecies(go1.11+ required)
+ 2. run `make build`
+ 3. run `make start-server` to start the server
+ 4. run `make start-client` for each client
+
+ ## Demo:
+ 
 ![Screenshot](screenshot.gif)

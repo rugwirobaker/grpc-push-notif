@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	pb "grpc-push-notif/protos"
+	pb "github.com/rugwirobaker/grpc-push-notif/models/notif"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -41,7 +41,7 @@ func (s *server) Alert(topic *pb.Topic, stream pb.PushNotif_AlertServer) error {
 	log.Printf("Received a Subscription Request(%s, %s)", topic.GetClientName(), topic.GetType().String())
 	s.alertStrm[topic.GetClientName()] = stream
 	//log.Printf("Client %s will now recieve Alerts", topic.GetClientName())
-    log.Printf("")
+	log.Printf("")
 
 	// long lived stream
 	for {
@@ -69,7 +69,7 @@ func (s *server) Subscribe(stream pb.PushNotif_SubscribeServer) error {
 			log.Printf("Client %s already subscribed to %s", in.GetClientName(), in.GetType().String())
 		}
 	}
-	return nil
+	//return nil
 }
 
 func (s *server) pushUpdates() {

@@ -14,7 +14,7 @@ import (
 	"math/rand"
 	"time"
 
-	pb "grpc-push-notif/protos"
+	pb "github.com/rugwirobaker/grpc-push-notif/models/notif"
 
 	"google.golang.org/grpc"
 )
@@ -34,7 +34,7 @@ func register(client pb.PushNotifClient) error {
 	if err != nil {
 		log.Fatalf("Register failed %v", err)
 	}
-    log.Println("Registration Resp: ", resp, err)
+	log.Println("Registration Resp: ", resp, err)
 	// cookie = resp.ClientCookie
 	// log.Printf("Reg Response %s, %s, %v", resp.ClientName, resp.ServerName, resp.ClientCookie)
 

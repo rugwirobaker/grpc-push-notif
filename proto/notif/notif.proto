@@ -5,6 +5,8 @@
 //
 syntax = "proto3";
 
+package notif;
+
 service pushNotif {
 	rpc Register (RegistrationRequest) returns (RegistrationResponse);
 	rpc Alert (Topic) returns (stream Notification);
